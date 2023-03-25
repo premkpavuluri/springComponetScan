@@ -1,12 +1,13 @@
 package com.prem.practice.cScanPractice
 
-import com.prem.practice.cScanPractice.annotations.Animal
+import com.prem.practice.cScanPractice.configure.CustomComponentScanConfig
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.FilterType
 
 @SpringBootApplication
-@ComponentScan(includeFilters = [ComponentScan.Filter(Animal::class)])
+@ComponentScan(includeFilters = [ComponentScan.Filter(type = FilterType.CUSTOM, classes = [CustomComponentScanConfig::class])])
 class CScanPracticeApplication
 
 fun main(args: Array<String>) {
